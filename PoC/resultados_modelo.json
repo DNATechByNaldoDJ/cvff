@@ -1,0 +1,236 @@
+{
+  "aviso": "TODOS os valores são hipotéticos, não estimativas do governo, Pix ou mercado brasileiro.",
+  "natureza": "Cálculo de hipóteses, não pesquisa empírica",
+  "checks_passed": 6,
+  "cenarios": [
+    {
+      "nome": "Cobertura de 20%",
+      "parametros": {
+        "N": 1000000,
+        "p": 0.005,
+        "a": 0.2,
+        "s": 0.9,
+        "L": 400.0,
+        "m": 0.2,
+        "f": 0.001,
+        "h": 20.0,
+        "c": 0.15,
+        "F": 150000.0,
+        "I": 500000.0,
+        "S": 0.0,
+        "T": 3,
+        "r": 0.1,
+        "I_publico": 200000.0,
+        "F_publico": 50000.0,
+        "c_publico": 0.02,
+        "S_publico": 0.0
+      },
+      "resultado": {
+        "perda_baseline_ano": 2000000.0,
+        "perda_inicialmente_evitada": 360000.0,
+        "perda_deslocada_ou_migrada": 72000.0,
+        "falsos_bloqueios_esperados": 199.0,
+        "custo_falsos_bloqueios": 3980.0,
+        "custo_variavel": 30000.0,
+        "beneficio_liquido_anual_conjunto": 104020.0,
+        "fator_desconto": 2.486851990984222,
+        "vpl_conjunto": -241317.65589782124,
+        "vpl_orcamento_publico": -334290.007513148,
+        "resultado_conjunto": "negativo",
+        "equilibrio": {
+          "A": 351057.40181268885,
+          "D": 1270100.0000000005,
+          "limite": 0.2764013871448616,
+          "relacao": "a >= limite",
+          "intervalo_viavel_0_a_1": [
+            0.2764013871448616,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "nome": "Cobertura de 60%",
+      "parametros": {
+        "N": 1000000,
+        "p": 0.005,
+        "a": 0.6,
+        "s": 0.9,
+        "L": 400.0,
+        "m": 0.2,
+        "f": 0.001,
+        "h": 20.0,
+        "c": 0.15,
+        "F": 150000.0,
+        "I": 500000.0,
+        "S": 0.0,
+        "T": 3,
+        "r": 0.1,
+        "I_publico": 200000.0,
+        "F_publico": 50000.0,
+        "c_publico": 0.02,
+        "S_publico": 0.0
+      },
+      "resultado": {
+        "perda_baseline_ano": 2000000.0,
+        "perda_inicialmente_evitada": 1080000.0,
+        "perda_deslocada_ou_migrada": 216000.0,
+        "falsos_bloqueios_esperados": 597.0,
+        "custo_falsos_bloqueios": 11940.0,
+        "custo_variavel": 90000.0,
+        "beneficio_liquido_anual_conjunto": 612060.0,
+        "fator_desconto": 2.486851990984222,
+        "vpl_conjunto": 1022102.6296018029,
+        "vpl_orcamento_publico": -354184.8234410217,
+        "resultado_conjunto": "positivo",
+        "equilibrio": {
+          "A": 351057.40181268885,
+          "D": 1270100.0000000005,
+          "limite": 0.2764013871448616,
+          "relacao": "a >= limite",
+          "intervalo_viavel_0_a_1": [
+            0.2764013871448616,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "nome": "60% de cobertura, migração de 80%",
+      "parametros": {
+        "N": 1000000,
+        "p": 0.005,
+        "a": 0.6,
+        "s": 0.9,
+        "L": 400.0,
+        "m": 0.8,
+        "f": 0.001,
+        "h": 20.0,
+        "c": 0.15,
+        "F": 150000.0,
+        "I": 500000.0,
+        "S": 0.0,
+        "T": 3,
+        "r": 0.1,
+        "I_publico": 200000.0,
+        "F_publico": 50000.0,
+        "c_publico": 0.02,
+        "S_publico": 0.0
+      },
+      "resultado": {
+        "perda_baseline_ano": 2000000.0,
+        "perda_inicialmente_evitada": 1080000.0,
+        "perda_deslocada_ou_migrada": 864000.0,
+        "falsos_bloqueios_esperados": 597.0,
+        "custo_falsos_bloqueios": 11940.0,
+        "custo_variavel": 90000.0,
+        "beneficio_liquido_anual_conjunto": -35940.0,
+        "fator_desconto": 2.486851990984222,
+        "vpl_conjunto": -589377.460555973,
+        "vpl_orcamento_publico": -354184.8234410217,
+        "resultado_conjunto": "negativo",
+        "equilibrio": {
+          "A": 351057.40181268885,
+          "D": 190100.0,
+          "limite": 1.8466985892303465,
+          "relacao": "a >= limite",
+          "intervalo_viavel_0_a_1": null
+        }
+      }
+    }
+  ],
+  "sensibilidade": [
+    {
+      "cobertura": 0.0,
+      "vpl": -873027.7986476333
+    },
+    {
+      "cobertura": 0.05,
+      "vpl": -715100.2629601803
+    },
+    {
+      "cobertura": 0.1,
+      "vpl": -557172.7272727273
+    },
+    {
+      "cobertura": 0.15,
+      "vpl": -399245.19158527424
+    },
+    {
+      "cobertura": 0.2,
+      "vpl": -241317.65589782124
+    },
+    {
+      "cobertura": 0.25,
+      "vpl": -83390.12021036824
+    },
+    {
+      "cobertura": 0.3,
+      "vpl": 74537.41547708481
+    },
+    {
+      "cobertura": 0.35,
+      "vpl": 232464.9511645378
+    },
+    {
+      "cobertura": 0.4,
+      "vpl": 390392.4868519908
+    },
+    {
+      "cobertura": 0.45,
+      "vpl": 548320.0225394438
+    },
+    {
+      "cobertura": 0.5,
+      "vpl": 706247.5582268969
+    },
+    {
+      "cobertura": 0.55,
+      "vpl": 864175.0939143498
+    },
+    {
+      "cobertura": 0.6,
+      "vpl": 1022102.6296018029
+    },
+    {
+      "cobertura": 0.65,
+      "vpl": 1180030.1652892558
+    },
+    {
+      "cobertura": 0.7,
+      "vpl": 1337957.700976709
+    },
+    {
+      "cobertura": 0.75,
+      "vpl": 1495885.236664162
+    },
+    {
+      "cobertura": 0.8,
+      "vpl": 1653812.7723516151
+    },
+    {
+      "cobertura": 0.85,
+      "vpl": 1811740.3080390678
+    },
+    {
+      "cobertura": 0.9,
+      "vpl": 1969667.843726521
+    },
+    {
+      "cobertura": 0.95,
+      "vpl": 2127595.379413974
+    },
+    {
+      "cobertura": 1.0,
+      "vpl": 2285522.915101427
+    }
+  ],
+  "binomial": {
+    "alpha": 0.05,
+    "qmax": 0.001,
+    "n_minimo_zero_falhas": 2995,
+    "limite_com_1000_sem_falhas": 0.002991249545095296,
+    "limite_com_2995_sem_falhas": 0.0009997444209011424,
+    "condicao": "Observações independentes e representativas, não contagem de testes de software"
+  }
+}

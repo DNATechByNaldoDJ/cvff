@@ -1,0 +1,145 @@
+{
+  "scope": "Laboratório local HMAC + SQLite; nenhuma integração financeira",
+  "cases": [
+    {
+      "case": "pagamento_valido",
+      "passed": true,
+      "observed": {
+        "ledger_rows": 1,
+        "order": "ordem-a1"
+      }
+    },
+    {
+      "case": "alteracao_destination",
+      "passed": true,
+      "observed": {
+        "reason": "autenticacao_invalida",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "alteracao_amount",
+      "passed": true,
+      "observed": {
+        "reason": "autenticacao_invalida",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "alteracao_obligation",
+      "passed": true,
+      "observed": {
+        "reason": "autenticacao_invalida",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "alteracao_revision",
+      "passed": true,
+      "observed": {
+        "reason": "autenticacao_invalida",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "expiracao",
+      "passed": true,
+      "observed": {
+        "reason": "tempo_ou_audiencia_invalidos",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "revogacao_emissor",
+      "passed": true,
+      "observed": {
+        "reason": "emissor_revogado",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "ausencia_confirmacao",
+      "passed": true,
+      "observed": {
+        "reason": "confirmacao_ausente_ou_divergente",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "cobranca_autentica_devedor_incorreto",
+      "passed": true,
+      "observed": {
+        "reason": "cobranca_diferente_da_intencao_confirmada",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "revisao_obsoleta",
+      "passed": true,
+      "observed": {
+        "reason": "obrigacao_divergente",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "mesma_autorizacao_concorrente",
+      "passed": true,
+      "observed": {
+        "concurrent_requests": 2,
+        "ledger_rows": 1,
+        "idempotent_replies": 1
+      }
+    },
+    {
+      "case": "duas_autorizacoes_mesma_obrigacao",
+      "passed": true,
+      "observed": {
+        "concurrent_requests": 2,
+        "ledger_rows": 1,
+        "blocked_requests": 1
+      }
+    },
+    {
+      "case": "timeout_apos_commit_e_reconciliacao",
+      "passed": true,
+      "observed": {
+        "recovered": true,
+        "ledger_rows_after_retry": 1
+      }
+    },
+    {
+      "case": "cancelamento_antes_execucao",
+      "passed": true,
+      "observed": {
+        "reason": "autorizacao_revogada_ou_cancelada",
+        "ledger_rows": 0
+      }
+    },
+    {
+      "case": "devolucao_idempotente_limitada",
+      "passed": true,
+      "observed": {
+        "refunded_cents": 10000,
+        "refund_rows": 2,
+        "original_not_reopened": true
+      }
+    },
+    {
+      "case": "contraexemplo_pix_comum_indistinguivel",
+      "passed": true,
+      "observed": {
+        "same_observation": true,
+        "both": "origem_institucional_nao_verificada",
+        "limitation_demonstrated": "Sem informação adicional não se identifica a finalidade real"
+      }
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "limitations": [
+    "HMAC simétrico, não assinatura pública institucional",
+    "Ledger e autorização na mesma transação SQLite",
+    "Não prova coordenação entre PSPs, escala ou redução real de fraude",
+    "Testes escolhidos não são amostra estatística de produção"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "aviso": "TODOS os valores são hipotéticos, não estimativas do governo, Pix ou mercado brasileiro.",
+  "base": {
+    "N": 1000000, "p": 0.005, "a": 0.6, "s": 0.9, "L": 400.0,
+    "m": 0.2, "f": 0.001, "h": 20.0, "c": 0.15,
+    "F": 150000.0, "I": 500000.0, "S": 0.0, "T": 3, "r": 0.1,
+    "I_publico": 200000.0, "F_publico": 50000.0,
+    "c_publico": 0.02, "S_publico": 0.0
+  },
+  "cenarios": [
+    {"nome": "Cobertura de 20%", "alteracoes": {"a": 0.2}},
+    {"nome": "Cobertura de 60%", "alteracoes": {"a": 0.6}},
+    {"nome": "60% de cobertura, migração de 80%", "alteracoes": {"a": 0.6, "m": 0.8}}
+  ]
+}
